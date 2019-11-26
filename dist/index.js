@@ -2782,7 +2782,7 @@ removeAdditionalFilesFlag, excludeFilesFromAppDataFlag, takeAppOfflineFlag, virt
         ? webAppName + "/" + virtualApplication
         : webAppName;
     if (isFolderBasedDeployment) {
-        msDeployCmdArgs += " -source:IisApp=\"'" + webAppPackage + "'\"";
+        msDeployCmdArgs += " -source:contentPath=\"'" + webAppPackage + "'\"";
         msDeployCmdArgs +=
             " -dest:iisApp=\"'" + webApplicationDeploymentPath + "'\"";
     }
