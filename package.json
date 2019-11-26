@@ -1,0 +1,30 @@
+{
+  "name": "webdeploy-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "package": "ncc build src/index.ts -o dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/exec": "^1.0.1",
+    "@actions/io": "^1.0.1",
+    "@actions/tool-cache": "^1.1.2",
+    "adm-zip": "^0.4.13",
+    "tiny-glob": "^0.2.6",
+    "webdeployment-common-v2": "cschleiden/azure-pipelines-tasks#webdeployment-common-v2-v2.0.0-gitpkg",
+    "winreg": "^1.2.4"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.4.32",
+    "@types/node": "^12.12.7",
+    "@types/winreg": "^1.2.30",
+    "@zeit/ncc": "^0.20.5",
+    "typescript": "^3.7.2"
+  }
+}
