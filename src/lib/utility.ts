@@ -21,7 +21,7 @@ export async function isInputPkgIsFolder(
     throw new Error(`Could not find input pkg`);
   }
 
-  return stat.isFile();
+  return !stat.isFile();
 }
 
 export async function findfiles(filepath: string) {

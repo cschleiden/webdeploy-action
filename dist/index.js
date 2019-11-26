@@ -1055,7 +1055,7 @@ function isInputPkgIsFolder(webDeployPkg) {
         catch (e) {
             throw new Error(`Could not find input pkg`);
         }
-        return stat.isFile();
+        return !stat.isFile();
     });
 }
 exports.isInputPkgIsFolder = isInputPkgIsFolder;
