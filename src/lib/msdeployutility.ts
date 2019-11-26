@@ -46,7 +46,7 @@ export function getMSDeployCmdArgs(
     : webAppName;
 
   if (isFolderBasedDeployment) {
-    msDeployCmdArgs += " -source:contentPath=\"'" + webAppPackage + "'\"";
+    msDeployCmdArgs += " -source:IisApp=\"'" + webAppPackage + "'\"";
     msDeployCmdArgs +=
       " -dest:iisApp=\"'" + webApplicationDeploymentPath + "'\"";
   } else {
