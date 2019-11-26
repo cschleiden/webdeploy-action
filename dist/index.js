@@ -921,14 +921,6 @@ class ExecState extends events.EventEmitter {
 
 /***/ }),
 
-/***/ 41:
-/***/ (function() {
-
-eval("require")("webdeployment-common-v2/ziputility.js");
-
-
-/***/ }),
-
 /***/ 47:
 /***/ (function(module, __unusedexports, __webpack_require__) {
 
@@ -1047,7 +1039,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const core = __importStar(__webpack_require__(470));
 const fs_1 = __webpack_require__(747);
 const tiny_glob_1 = __importDefault(__webpack_require__(47));
-var zipUtility = __webpack_require__(41);
 /**
  * Validates the input package and finds out input type
  *
@@ -1080,27 +1071,6 @@ function findfiles(filepath) {
     });
 }
 exports.findfiles = findfiles;
-/**
- * Check whether the package contains parameter.xml file
- * @param   webAppPackage   web deploy package
- * @returns boolean
- */
-function isMSDeployPackage(webAppPackage) {
-    return __awaiter(this, void 0, void 0, function* () {
-        var isParamFilePresent = false;
-        var pacakgeComponent = yield zipUtility.getArchivedEntries(webAppPackage);
-        if ((pacakgeComponent["entries"].indexOf("parameters.xml") > -1 ||
-            pacakgeComponent["entries"].indexOf("Parameters.xml") > -1) &&
-            (pacakgeComponent["entries"].indexOf("systemInfo.xml") > -1 ||
-                pacakgeComponent["entries"].indexOf("systeminfo.xml") > -1 ||
-                pacakgeComponent["entries"].indexOf("SystemInfo.xml") > -1)) {
-            isParamFilePresent = true;
-        }
-        core.debug("Is the package an msdeploy package : " + isParamFilePresent);
-        return isParamFilePresent;
-    });
-}
-exports.isMSDeployPackage = isMSDeployPackage;
 
 
 /***/ }),

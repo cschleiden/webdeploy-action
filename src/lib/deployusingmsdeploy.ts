@@ -8,7 +8,6 @@ import {
   getMSDeployFullPath,
   redirectMSDeployErrorToConsole
 } from "./msdeployutility";
-import { isMSDeployPackage } from "./utility";
 
 const DEFAULT_RETRY_COUNT = 3;
 
