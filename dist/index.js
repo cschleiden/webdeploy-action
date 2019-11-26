@@ -1116,29 +1116,34 @@ const utility_1 = __webpack_require__(83);
 const deployusingmsdeploy_1 = __webpack_require__(846);
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
-        // Read inputs
-        const webSiteName = core.getInput("games", {
-            required: true
-        });
-        const webDeployPackageInput = core.getInput("package", {
-            required: true
-        });
-        var availableWebPackages = yield utility_1.findfiles(webDeployPackageInput);
-        if (availableWebPackages.length == 0) {
-            throw new Error("Web deploy package not found");
+        try {
+            // Read inputs
+            const webSiteName = core.getInput("webSiteName", {
+                required: true
+            });
+            const webDeployPackageInput = core.getInput("package", {
+                required: true
+            });
+            var availableWebPackages = yield utility_1.findfiles(webDeployPackageInput);
+            if (availableWebPackages.length == 0) {
+                throw new Error("Web deploy package not found");
+            }
+            if (availableWebPackages.length > 1) {
+                throw new Error("More than one web deploy package found");
+            }
+            const webDeployPkg = availableWebPackages[0];
+            const isFolderBasedDeployment = yield utility_1.isInputPkgIsFolder(webDeployPkg);
+            yield deployusingmsdeploy_1.DeployUsingMSDeploy(webDeployPkg, webSiteName, null, false, // removeAdditionalFilesFlag,
+            false, // excludeFilesFromAppDataFlag,
+            false, // takeAppOfflineFlag,
+            undefined, // virtualApplication,
+            undefined, // setParametersFile,
+            undefined, // additionalArguments,
+            isFolderBasedDeployment, true);
         }
-        if (availableWebPackages.length > 1) {
-            throw new Error("More than one web deploy package found");
+        catch (e) {
+            core.setFailed(e.message);
         }
-        const webDeployPkg = availableWebPackages[0];
-        const isFolderBasedDeployment = yield utility_1.isInputPkgIsFolder(webDeployPkg);
-        yield deployusingmsdeploy_1.DeployUsingMSDeploy(webDeployPkg, webSiteName, null, false, // removeAdditionalFilesFlag,
-        false, // excludeFilesFromAppDataFlag,
-        false, // takeAppOfflineFlag,
-        undefined, // virtualApplication,
-        undefined, // setParametersFile,
-        undefined, // additionalArguments,
-        isFolderBasedDeployment, true);
     });
 }
 run();
