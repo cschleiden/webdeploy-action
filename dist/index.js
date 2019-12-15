@@ -1138,7 +1138,7 @@ function run() {
             false, // takeAppOfflineFlag,
             undefined, // virtualApplication,
             undefined, // setParametersFile,
-            undefined, // additionalArguments,
+            "-verbose", // additionalArguments,
             isFolderBasedDeployment, true);
         }
         catch (e) {
