@@ -3343,6 +3343,7 @@ function DeployUsingMSDeploy(webDeployPkg, webAppName, publishingProfile, remove
         var msDeployDirectory = msDeployPath.slice(0, msDeployPath.lastIndexOf("\\") + 1);
         var pathVar = process.env.PATH;
         process.env.PATH = msDeployDirectory + ";" + process.env.PATH;
+        core.debug(`Found msdeploy path: '${msDeployPath}'`);
         var msDeployCmdArgs = msdeployutility_1.getMSDeployCmdArgs(webDeployPkg, webAppName, publishingProfile, removeAdditionalFilesFlag, excludeFilesFromAppDataFlag, takeAppOfflineFlag, virtualApplication || "", "", //setParametersFileName,
         additionalArguments || "", false, //isParamFilePresentInPackage,
         !!isFolderBasedDeployment, !!useWebDeploy);

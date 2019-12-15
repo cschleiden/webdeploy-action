@@ -46,6 +46,8 @@ export async function DeployUsingMSDeploy(
   var pathVar = process.env.PATH;
   process.env.PATH = msDeployDirectory + ";" + process.env.PATH;
 
+  core.debug(`Found msdeploy path: '${msDeployPath}'`);
+
   var msDeployCmdArgs = getMSDeployCmdArgs(
     webDeployPkg,
     webAppName,
