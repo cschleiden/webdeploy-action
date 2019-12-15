@@ -121,7 +121,7 @@ export function getMSDeployCmdArgs(
     msDeployCmdArgs += " -enableRule:DoNotDeleteRule";
   }
 
-  core.debug("Constructed msDeploy comamnd line arguments");
+  core.debug(`Constructed msDeploy comamnd line arguments: ${msDeployCmdArgs}`);
   return msDeployCmdArgs;
 }
 

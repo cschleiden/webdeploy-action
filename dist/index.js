@@ -2849,7 +2849,7 @@ removeAdditionalFilesFlag, excludeFilesFromAppDataFlag, takeAppOfflineFlag, virt
     if (!(removeAdditionalFilesFlag && useWebDeploy)) {
         msDeployCmdArgs += " -enableRule:DoNotDeleteRule";
     }
-    core.debug("Constructed msDeploy comamnd line arguments");
+    core.debug(`Constructed msDeploy comamnd line arguments: ${msDeployCmdArgs}`);
     return msDeployCmdArgs;
 }
 exports.getMSDeployCmdArgs = getMSDeployCmdArgs;
