@@ -4,12 +4,14 @@ This action allows you to deploy a web deploy package or a folder to an IIS webs
 
 ## Example:
 
+With a self-hosted runner running on the Windows server:
+
 ```yml
     steps:
     - uses: cschleiden/webdeploy-action@v1
       with:
         webSiteName: 'My IIS Site'
-        package: 'dist'
+        package: ${{ format('{0}\dist', runner.workspace) }}
 ```
 
 ## Acknowledgments
