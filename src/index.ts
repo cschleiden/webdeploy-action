@@ -12,8 +12,8 @@ async function run() {
       required: true
     });
 
-    const takeAppOfflineFlag = core.getInput("takeAppOfflineFlag");
-    
+    const takeAppOfflineFlag: boolean = JSON.parse(core.getInput("takeAppOfflineFlag"));
+
     var availableWebPackages = await findfiles(webDeployPackageInput);
     if (availableWebPackages.length == 0) {
       throw new Error("Web deploy package not found");
