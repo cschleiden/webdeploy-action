@@ -1136,7 +1136,8 @@ function run() {
             const isFolderBasedDeployment = yield utility_1.isInputPkgIsFolder(webDeployPkg);
             yield deployusingmsdeploy_1.DeployUsingMSDeploy(webDeployPkg, webSiteName, null, false, // removeAdditionalFilesFlag,
             false, // excludeFilesFromAppDataFlag,
-            takeAppOfflineFlag, undefined, // virtualApplication,
+            takeAppOfflineFlag,
+            undefined, // virtualApplication,
             undefined, // setParametersFile,
             "-verbose", // additionalArguments,
             isFolderBasedDeployment, true);
