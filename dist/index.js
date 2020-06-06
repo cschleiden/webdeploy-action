@@ -1124,8 +1124,8 @@ function run() {
             const webDeployPackageInput = core.getInput("package", {
                 required: true
             });
-            const removeAdditionalFilesFlag = core.getInput("removeAdditionalFilesFlag") == 'true';
-            const takeAppOfflineFlag = core.getInput("takeAppOfflineFlag") == 'true';
+            const removeAdditionalFilesFlag = core.getInput("removeAdditionalFilesFlag") == "true";
+            const takeAppOfflineFlag = core.getInput("takeAppOfflineFlag") == "true";
             var availableWebPackages = yield utility_1.findfiles(webDeployPackageInput);
             if (availableWebPackages.length == 0) {
                 throw new Error("Web deploy package not found");

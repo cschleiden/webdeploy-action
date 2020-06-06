@@ -11,8 +11,8 @@ async function run() {
     const webDeployPackageInput = core.getInput("package", {
       required: true
     });
-    const removeAdditionalFilesFlag: boolean = core.getInput("removeAdditionalFilesFlag") == 'true';
-    const takeAppOfflineFlag: boolean = core.getInput("takeAppOfflineFlag") == 'true';
+    const removeAdditionalFilesFlag: boolean = core.getInput("removeAdditionalFilesFlag") == "true";
+    const takeAppOfflineFlag: boolean = core.getInput("takeAppOfflineFlag") == "true";
 
     var availableWebPackages = await findfiles(webDeployPackageInput);
     if (availableWebPackages.length == 0) {
