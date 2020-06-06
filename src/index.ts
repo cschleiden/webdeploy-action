@@ -12,7 +12,7 @@ async function run() {
       required: true
     });
 
-    const takeAppOfflineFlag: boolean = JSON.parse(core.getInput("takeAppOfflineFlag"));
+    const takeAppOfflineFlag: boolean = core.getInput("takeAppOfflineFlag") == 'true';
 
     var availableWebPackages = await findfiles(webDeployPackageInput);
     if (availableWebPackages.length == 0) {
