@@ -1124,8 +1124,8 @@ function run() {
             const webDeployPackageInput = core.getInput("package", {
                 required: true
             });
+            const removeAdditionalFilesFlag = core.getInput("removeAdditionalFilesFlag") == "true";
             const takeAppOfflineFlag = core.getInput("takeAppOfflineFlag") == "true";
-
             var availableWebPackages = yield utility_1.findfiles(webDeployPackageInput);
             if (availableWebPackages.length == 0) {
                 throw new Error("Web deploy package not found");
@@ -1135,7 +1135,7 @@ function run() {
             }
             const webDeployPkg = availableWebPackages[0];
             const isFolderBasedDeployment = yield utility_1.isInputPkgIsFolder(webDeployPkg);
-            yield deployusingmsdeploy_1.DeployUsingMSDeploy(webDeployPkg, webSiteName, null, false, // removeAdditionalFilesFlag,
+            yield deployusingmsdeploy_1.DeployUsingMSDeploy(webDeployPkg, webSiteName, null, removeAdditionalFilesFlag,
             false, // excludeFilesFromAppDataFlag,
             takeAppOfflineFlag,
             undefined, // virtualApplication,
