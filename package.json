@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@actions/core": "^1.2.0",
+    "@actions/core": "^1.9.1",
     "@actions/exec": "^1.0.1",
     "@actions/io": "^1.0.1",
     "adm-zip": "^0.4.13",
