@@ -14,7 +14,7 @@
     "@actions/core": "^1.9.1",
     "@actions/exec": "^1.0.1",
     "@actions/io": "^1.0.1",
-    "adm-zip": "^0.4.13",
+    "adm-zip": "^0.6.0",
     "tiny-glob": "^0.2.6",
     "winreg": "^1.2.4"
   },
